@@ -92,8 +92,34 @@ body {
 
 /* 收紧欢迎语和文章列表之间的间距 */
 .home-info {
+    min-height: auto !important;
+    justify-content: flex-start !important;
     padding-bottom: 0 !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 40px !important;
+}
+
+.home-info .entry-content p {
+    margin-block-end: 0.45em;
+}
+
+.home-info .entry-footer {
+    margin-top: 0.2rem;
+    line-height: 1;
+}
+
+.home-info .social-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.home-info .social-icons a {
+    padding: 6px 8px;
+}
+
+.home-info .social-icons a svg {
+    width: 30px;
+    height: 30px;
 }
 
 .first-entry {

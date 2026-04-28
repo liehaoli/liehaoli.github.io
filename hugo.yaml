@@ -78,6 +78,10 @@ params:
 # 顶部菜单(对应 Lilian 网站顶部的 archive/search/tags)
 menu:
   main:
+    - identifier: posts
+      name: Posts
+      url: /
+      weight: 5
     - identifier: archives
       name: Archive
       url: /archives/
