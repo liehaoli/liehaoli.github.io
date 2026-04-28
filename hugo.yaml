@@ -60,6 +60,8 @@ params:
       url: "https://github.com/liehaoli"
     - name: googlescholar
       url: "https://scholar.google.com/citations?user=Gg09s0AAAAAJ&hl=en"
+    - name: bilibili
+      url: "https://space.bilibili.com/291311526"
     - name: email
       url: "mailto:liehao@buaa.edu.cn"
     
