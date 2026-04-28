@@ -12,6 +12,16 @@ buildExpired: false
 # 启用数学公式渲染（写 AI 内容必备）
 markup:
   goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+          inline:
+            - ['\(', '\)']
+            - ['$', '$']
     renderer:
       unsafe: true
   highlight:

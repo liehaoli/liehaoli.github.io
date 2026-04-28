@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">JSON escape trap versus YAML block literal</title>
+  <desc id="desc">A clean side-by-side diagram comparing JSON escaping and YAML block literals.</desc>
+  <style>
+    .bg { fill: #fbfaf7; }
+    .panel { fill: #fffefb; stroke: #222; stroke-width: 3; }
+    .bad { fill: #ffe5e5; }
+    .good { fill: #e7f6df; }
+    .title { font: 700 38px Arial, sans-serif; fill: #222; }
+    .subtitle { font: 22px Arial, sans-serif; fill: #555; }
+    .head { font: 700 30px Arial, sans-serif; fill: #222; }
+    .body { font: 22px Arial, sans-serif; fill: #333; }
+    .code { font: 24px Consolas, "Courier New", monospace; fill: #222; }
+    .red { fill: #c62828; font-weight: 700; }
+  </style>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="title" x="80" y="72">The escape debt</text>
+  <text class="subtitle" x="82" y="110">When the wrapper and the content use the same symbols, the model does two jobs.</text>
+
+  <rect class="panel bad" x="80" y="170" width="480" height="370" rx="18"/>
+  <text class="head" x="120" y="225">JSON string</text>
+  <text class="code" x="120" y="285">{</text>
+  <text class="code" x="150" y="330">"pattern": "\\bclass\\s+\\w+"</text>
+  <text class="code" x="120" y="375">}</text>
+  <text class="body" x="120" y="455">The content is correct,</text>
+  <text class="body" x="120" y="488">but every backslash must be</text>
+  <text class="body red" x="120" y="521">escaped for the wrapper.</text>
+
+  <rect class="panel good" x="640" y="170" width="480" height="370" rx="18"/>
+  <text class="head" x="680" y="225">YAML block</text>
+  <text class="code" x="680" y="285">pattern: |</text>
+  <text class="code" x="680" y="330">  \bclass\s+\w+</text>
+  <text class="code" x="680" y="375">notes: |</text>
+  <text class="code" x="680" y="420">  ### heading is content</text>
+  <text class="body" x="680" y="500">The content stays readable.</text>
+</svg>

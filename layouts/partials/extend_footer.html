@@ -1,0 +1,12 @@
+{{- /* Footer custom content area start */ -}}
+{{- /*     Insert any custom code web-analytics, resources, etc. here */ -}}
+<script>
+    (() => {
+        const siteBase = new URL('{{ "" | absLangURL }}', window.location.href);
+        document.querySelectorAll(`a[href^="${siteBase.href}"]`).forEach((link) => {
+            const url = new URL(link.getAttribute('href'), window.location.href);
+            link.setAttribute('href', `${url.pathname}${url.search}${url.hash}`);
+        });
+    })();
+</script>
+{{- /* Footer custom content area end */ -}}

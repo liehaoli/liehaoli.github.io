@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Fallback ladder for LLM output parsing</title>
+  <desc id="desc">A simple three-step fallback ladder for LLM output parsing.</desc>
+  <style>
+    .bg { fill: #fbfaf7; }
+    .step { fill: #fffefb; stroke: #222; stroke-width: 3; }
+    .last { fill: #fff0bd; }
+    .title { font: 700 38px Arial, sans-serif; fill: #222; }
+    .subtitle { font: 22px Arial, sans-serif; fill: #555; }
+    .head { font: 700 30px Arial, sans-serif; fill: #222; }
+    .body { font: 22px Arial, sans-serif; fill: #333; }
+    .cost { font: 700 22px Arial, sans-serif; fill: #9f2f2f; }
+    .arrow { stroke: #222; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="title" x="80" y="72">Retry is the last rung</text>
+  <text class="subtitle" x="82" y="110">Fix cheap syntax failures locally before asking the model again.</text>
+
+  <rect class="step" x="190" y="160" width="820" height="105" rx="18"/>
+  <text class="head" x="235" y="205">1. Strict parser</text>
+  <text class="body" x="235" y="240">json.loads / safe_load / XML parser</text>
+  <text class="cost" x="830" y="230">microseconds</text>
+
+  <path class="arrow" d="M 600 270 L 600 330"/>
+
+  <rect class="step" x="190" y="335" width="820" height="105" rx="18"/>
+  <text class="head" x="235" y="380">2. Local rescue</text>
+  <text class="body" x="235" y="415">delimiters / regex / small repairs</text>
+  <text class="cost" x="830" y="405">microseconds</text>
+
+  <path class="arrow" d="M 600 445 L 600 505"/>
+
+  <rect class="step last" x="190" y="510" width="820" height="105" rx="18"/>
+  <text class="head" x="235" y="555">3. LLM self-repair</text>
+  <text class="body" x="235" y="590">send broken output back only after local recovery fails</text>
+  <text class="cost" x="810" y="580">seconds + tokens</text>
+</svg>
