@@ -1,0 +1,101 @@
+baseURL: "https://liehaoli.github.io/"   # 改成你的 GitHub 用户名
+title: "Liehao's Blog"                       # 比如 Lilian 的是 "Lil'Log"
+theme: PaperMod
+pagination:
+  pagerSize: 10
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# 启用数学公式渲染（写 AI 内容必备）
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+params:
+  env: production
+  title: "Liehao's Blog"
+  description: "记录我对 AI、认知、投资以及科研的思考"
+  keywords: [Blog, AI, 认知, 投资, 科研]
+  author: "Liehao"
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto           # 跟随系统亮/暗
+  ShowReadingTime: true        # 显示阅读时长
+  ShowShareButtons: true       # 文末分享按钮
+  ShowPostNavLinks: true       # 上一篇/下一篇
+  ShowBreadCrumbs: true        # 面包屑导航
+  ShowCodeCopyButtons: true    # 代码块复制按钮
+  ShowWordCount: true          # 字数统计
+  ShowToc: true                # 目录(TOC) — Lilian 的长文必备
+  TocOpen: false               # 默认折叠
+  
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+    safari_pinned_tab: "/favicon.ico"
+  
+  cover:
+    hidden: true          # 全局隐藏 cover 图
+    hiddenInList: true    # 在文章列表（首页、tags 页、archive）隐藏
+    hiddenInSingle: false # 在文章详情页保留
+
+  # 数学公式
+  math: true
+
+  # 首页简介(对应 Lilian 那段 "Hi, this is Lilian...")
+  homeInfoParams:
+    Title: "👋 Welcome to Liehao's Log"
+    Content: >
+      Hi, this is liehao. I'm documenting my learning notes in this blog since 2026. I write here mostly so future-me can laugh at past-me 🫠.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/liehaoli"
+    - name: googlescholar
+      url: "https://scholar.google.com/citations?user=Gg09s0AAAAAJ&hl=en"
+    - name: email
+      url: "mailto:liehao@buaa.edu.cn"
+    
+  # 搜索功能配置
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# 顶部菜单(对应 Lilian 网站顶部的 archive/search/tags)
+menu:
+  main:
+    - identifier: archives
+      name: Archive
+      url: /archives/
+      weight: 10
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
+    - identifier: faq
+      name: FAQ
+      url: /faq/
+      weight: 40
+
+# 让搜索页能输出 JSON
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
